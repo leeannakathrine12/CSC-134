@@ -28,6 +28,7 @@ tax_amount = meal_price * tax_rate;
 total_price = meal_price + tax_amount;
 
 //Output Reciept
+cout << "---------------------------------------\n";
 cout << "Thank you for dining with us " << name << "!\n";
 cout << "Your meal price is $" << meal_price << ".\n";
 cout << "Your tax will be $" << tax_amount << ".\n";
