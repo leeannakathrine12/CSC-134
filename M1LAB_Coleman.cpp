@@ -4,6 +4,7 @@
 // 08/26/24
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 int main() { 
@@ -24,6 +25,8 @@ int main() {
   cin >> num_apples;
   cout << "How much does an apple cost? \n";
   cin >> price_per_apple;
+
+  cout << fixed << setprecision(2);
   
   // Welcome
   cout << "--------------------------------------\n";
