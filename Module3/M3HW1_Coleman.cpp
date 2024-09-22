@@ -45,7 +45,7 @@ cout << fixed << setprecision(2);
 //Welcome
 cout << "Welcome to the Reciept Maker!\n";
 cout << "What is your name?\n";
-getline(cin, name);
+cin >> name;
 cout << "How much was your meal?\n";
 cin >> meal_price;
 cout << "Are you dining in or getting takeout?\n";
