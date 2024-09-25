@@ -9,11 +9,6 @@
 
 using namespace std;
 
-int roll() {
-    int die = (rand () % 6) + 1;
-    return die;
-}
-
 int main()
 {
     int die1, die2, total;
@@ -44,3 +39,9 @@ int main()
 
     return 0;
 }
+
+int roll() {
+    int die = (rand () % 6) + 1;
+    return die;
+}
+
