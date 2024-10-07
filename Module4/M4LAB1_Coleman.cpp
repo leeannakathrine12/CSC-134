@@ -24,7 +24,6 @@ int main() {
 
     cout << endl << endl;
     cout << "Full Version: " << endl;
-
     const int ROWS = 9;
     const int COLS = 9;
 
