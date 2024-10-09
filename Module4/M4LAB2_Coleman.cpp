@@ -54,8 +54,8 @@ bool play_round () {
         cout << "Your point is : " << total << endl;
         point = total;
         total = roll() + roll();
+        cout << "Reroll: " << total << endl;
         while (total != point && total != 7) {
-            cout << "Reroll: " << total << endl;
             if (total == point) {
                 is_winner = true;
             } 
@@ -64,6 +64,7 @@ bool play_round () {
             }
             else {
                 total = roll() + roll();
+                cout << "Reroll: " << total << endl;
             }
         }
     }
