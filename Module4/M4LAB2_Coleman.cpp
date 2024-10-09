@@ -20,7 +20,13 @@ int main()
     seed = time(0);
     srand(seed);
     bool is_winner;
-    play_round();
+    is_winner = play_round();
+    if (is_winner) {
+        cout << "You Won! :)" << endl;
+    }
+    else {
+        cout << "You Lost! :(" << endl;
+    }
 
     return 0;
 }
@@ -31,22 +37,32 @@ int roll() {
 }
 
 bool play_round () {
-    bool is_winner;
+    bool is_winner = false;
     int die1 = roll();
     int die2 = roll();
+    int point;
     int total = die1 + die2;
     cout << "You rolled a(n) " << die1 << " + " << die2 << " = " << total << endl;
 
     if (total == 7 || total == 11) {
-        cout << "You Win! :)" << endl;
         is_winner = true;
     }
     else if (total == 2 || total == 3 || total == 12) {
-        cout << "You Lose! :(" << endl;
         is_winner = false;
     }
     else {
         cout << "Your point is : " << total << endl;
+        point = total;
+        total = roll() + roll();
+        while (total != point && total != 7) {
+            cout << "Reroll: " << total << endl;
+            if (total == point) {
+                is_winner = true;
+            } 
+            else if (total == 7) {
+                is_winner = false;
+            }
+        }
     }
 
     return is_winner;
