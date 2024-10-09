@@ -62,6 +62,9 @@ bool play_round () {
             else if (total == 7) {
                 is_winner = false;
             }
+            else {
+                total = roll() + roll();
+            }
         }
     }
 
