@@ -53,20 +53,16 @@ bool play_round () {
     else {
         cout << "Your point is : " << total << endl;
         point = total;
-        total = roll() + roll();
-        cout << "Reroll: " << total << endl;
-        while (total != point && total != 7) {
-            if (total == point) {
-                is_winner = true;
-            } 
-            else if (total == 7) {
+        do {
+            total = roll() + roll();
+            cout << "Come on lucky " << point << "! " << "Rolled: " << total << endl;
+            if (total == 7) {
                 is_winner = false;
             }
-            else {
-                total = roll() + roll();
-                cout << "Reroll: " << total << endl;
+            else if (total == point) {
+                is_winner = true;
             }
-        }
+        } while (total !=7 && total != point);
     }
 
     return is_winner;
