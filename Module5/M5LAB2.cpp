@@ -7,6 +7,44 @@
 
 using namespace std;
 
-int main() {
-    
+double getLength();
+double getWidth();
+double getArea(double length, double width);
+void displayData(double length, double width, double area);
+
+int main()
+{
+   double length, width, area;
+          
+   length = getLength();
+   width = getWidth();
+   area = getArea(length, width);
+   displayData(length, width, area);
+          
+   return 0;
+}
+
+double getLength() {
+double length;
+cout << "Enter the length of your rectangle: " << endl;
+cin >> length;
+return length;
+}
+
+double getWidth() {
+double width;
+cout << "Enter the width of your rectangle: " << endl;
+cin >> width;
+return width;
+}
+
+double getArea(double length, double width) {
+double area = length * width;
+return area;
+}
+
+void displayData(double length, double width, double area) {
+cout << "The length you entered is: " << length << endl;
+cout << "The width you entered is: " << width << endl;
+cout << "The area of your rectangle is: " << area << endl;
 }
