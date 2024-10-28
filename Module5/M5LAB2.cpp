@@ -7,6 +7,7 @@
 
 using namespace std;
 
+void greeting(string name);
 double getLength();
 double getWidth();
 double getArea(double length, double width);
@@ -15,13 +16,23 @@ void displayData(double length, double width, double area);
 int main()
 {
    double length, width, area;
-          
+   string name;
+
+   greeting(name);
    length = getLength();
    width = getWidth();
    area = getArea(length, width);
    displayData(length, width, area);
           
    return 0;
+}
+
+void greeting(string name) {
+   cout << "What is your first name?" << endl;
+   cin >> name;
+   cout << endl << "Welcome to the Rectangle Area Calculator " << name << "!" << endl;
+   cout << "-------------------------------------------------------" << endl << endl;
+   return;
 }
 
 double getLength() {
