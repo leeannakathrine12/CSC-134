@@ -1,14 +1,14 @@
-// CSC 134
-// M5HW1
-// Leeanna, Maddison, Susanna
-// 11/04/24
-
 #include <iostream>
 #include <iomanip>
 #include <cctype>
 #include <cstdlib>
 #include <cmath>
 using namespace std;
+
+// CSC 134
+// M3HW1 - Gold/Bonus
+// Susanna Quayle
+// 11/4/2024
 
 // declare funcs
 void avg_rainfall();
@@ -52,22 +52,8 @@ int main()
                 // this is where we'll calculate average rainfall
                 string month1, month2, month3;
                 double rfall1, rfall2, rfall3, avg;
-
-                avg = (month1 + month2 + month3)/3;
-
                 cout << "Enter month: ";
-                cin >> month1;
-                cout << "Enter rainfall for " << month1 << ": ";
-                cin >> rfall1;
-                cout << "Enter month: ";
-                cin >> month2;
-                cout << "Enter rainfall for " << month2 << ": ";
-                cin >> rfall2;
-                cout << "Enter month: ";
-                cin >> month3;
-                cout << "Enter rainfall for " << month3 << ": ";
-                cin >> rfall3;
-                cout << "The average rainfall for " << month1 << ", " << month2 << ", and " month3 << " is " << avg << endl;
+                
 
                 break;
             }
@@ -75,13 +61,13 @@ int main()
             case 2:
             {
                 // 3d hyperrectangle
-                cout << "Calculate a 3D Hyperrectangle (i.e. just a cube)" << endl;
+                cout << "Calculate a 3DD Hyperrectangle (i.e. just a cube)" << endl;
                 double width, length, height, volume;
                 cout << "Enter width: ";
                 cin >> width;
                 cout << "Enter length: ";
                 cin >> length;
-                cin << "Enter height: ";
+                cout << "Enter height: ";
                 cin >> height;
                 volume = calc_hyperrectangle(width, length, height);
                 break;
@@ -100,43 +86,19 @@ int main()
 
             case 4:
             {
-                // geometry calculator
-                
+                // Geometry Calculator
                 cout << "Welcome to the Geometry Calculator!" << endl;
-                cout << "1. Ca                 "3. Calculate the Area of a Trangle" << endl >> "4. Quit" <<"            
-                user_choice) {
-                    casgeometry 
-                    {
-geo  metry              area_circle();
-                    }
+                cout << "1. Calculate the Area of a Circle" << endl;
+                cout << "2. Calculate the Area of a Rectangle" << endl;
+                cout << "3. Calculate the Area of a Triangle" << endl;
+                cout << "4. Quit" << endl;
+                cout << "Enter your choice (1-4): ";
+                break;
+            }
 
-                    case 2:
-                    {
-                        area_rectangle();
-                    }
-
-                    case 3:
-                    {
-                       area_triangle(); 
-                    }
-                    
-                    case 4:
-                    {
-                        
-                    }
-                    
-                    defa//TODO go back to main menuult:
-                    {
-                        cout << "Invalid choice." << endl;
-                        break;  
-                    }
-                }
- Please pic                              k a number between (1-4)        }
-
-            case 
-
-                break;5:
-                            // distance traveled
+            case 5:
+            {
+                // distance traveled
                 double speed, hours;
                 bool speed_positive = true;
                 bool plus_one_hours = true;
@@ -262,34 +224,18 @@ void calc_hyperrectangle(double width, double length, double height)
 double area_circle() {
     
 }
-double radius;
-    cout << "Enter the radius of the circle: " << endl;
-    cin >> radius;
-    double c_area = (3.14159) * radius;
-    cout << "The area of the circle is: " << c_area << endl;
-    return 0;
-double area_rectangle(
-    double radius;) {
-he radius of the circl)     cin >> radius;
-    double width, length, r_area;
-    cout << "Enter the width of your rectangle: " << endl;
-    cin >> width;
-    cout << "Enter the length of your rectangle: " << endl;
-    cin >> length;
-    r_area = length * width;
-    cout << "The area of the rectangle is: " << r_area << endl;
-    return 0;
-    }
-    double width, length
-    double base, height, t_area;
-    cout << "Enter the triangle's base: " << endl;
-    cin >> base;
-    cout << "Enter the triangle's height: " << endl;
-    cin >> height;
-    t_area = base * height * (0.5);
-    cout << "The area of the triangle is: " << t_area << endl;
-    return 0;    cout << "Enter the length of your rectangle: " << endl;
-        cout << "Hour\tDistance Traveled" << endl;
+
+double area_rectangle() {
+
+}
+
+double area_triangle() {
+
+}
+
+void distance_traveled(double speed, double hours)
+{
+    cout << "Hour\tDistance Traveled" << endl;
     cout << "------------------------" << endl;
     for (int i = 1; i < hours; i++)
     {
