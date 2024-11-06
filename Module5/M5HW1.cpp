@@ -7,7 +7,7 @@ using namespace std;
 
 // CSC 134
 // M3HW1 - Gold/Bonus
-// Susanna Quayle, Leeanna Kathrine Coleman, Madison Moon
+// Susanna Quayle, Leeanna Coleman, Madison Moon
 // 11/4/2024
 
 // declare funcs
@@ -17,7 +17,7 @@ void get_roman_num(int digit);
 double area_circle();
 double area_rectangle();
 double area_triangle();
-void distance_traveled(double speed, double hours);
+bool distance_traveled(double speed, double hours);
 
 int main()
 {
@@ -28,7 +28,7 @@ int main()
 
     cout << "\nHello user, what is your name? ";
     cin >> name;
-    cout << "Nice to meet you, " << name << endl;
+    cout << "\nNice to meet you, " << name << endl;
 
     while (continue_menu)
     {
@@ -48,11 +48,23 @@ int main()
         {
             case 1:
             {
-                // avg rainfall
-                // this is where we'll calculate average rainfall
                 string month1, month2, month3;
                 double rfall1, rfall2, rfall3, avg;
+
                 cout << "Enter month: ";
+                cin >> month1;
+                cout << "Enter rainfall for " << month1 << ": ";
+                cin >> rfall1;
+                cout << "Enter month: ";
+                cin >> month2;
+                cout << "Enter rainfall for " << month2 << ": ";
+                cin >> rfall2;
+                cout << "Enter month: ";
+                cin >> month3;
+                cout << "Enter rainfall for " << month3 << ": ";
+                cin >> rfall3;
+                avg = (rfall1 + rfall2 + rfall3)/3;
+                cout << "The average rainfall for " << month1 << ", " << month2 << ", and " << month3 << " is " << avg << endl;
 
                 break;
             }
@@ -61,15 +73,14 @@ int main()
             {
                 // 3d hyperrectangle
                 cout << "Calculate a 3D Hyperrectangle (i.e. just a cube)" << endl;
-                double width, length, height;
+                double width, length, height, volume;
                 cout << "Enter width: ";
                 cin >> width;
                 cout << "Enter length: ";
                 cin >> length;
                 cout << "Enter height: ";
                 cin >> height;
-                double volume = calc_hyperrectangle(width, length, height);
-                cout << "Volume: " << volume << endl;
+                volume = calc_hyperrectangle(width, length, height);
                 break;
             }
 
@@ -130,26 +141,24 @@ int main()
                 }
                 break;
             }
+
             case 5:
             {
                 // distance traveled
                 double speed, hours;
                 bool speed_positive = true;
                 bool plus_one_hours = true;
-                while (speed_positive == true)
+                cout << "\nWhat is the speed you are traveling at? (in mph) ";
+                cin >> speed;
+                if (speed > 0)
                 {
-                    cout << "What is the speed you are traveling at? (in mph) ";
-                    cin >> speed;
-                    if (speed > 0)
-                    {
-                        speed_positive = true;
-                    }
-                    else if (speed <= 0)
-                    {
-                        speed_positive = false;
-                    }
+                    speed_positive = true;
                 }
-                while (plus_one_hours == true)
+                else if (speed <= 0)
+                {
+                    speed_positive = false;
+                }
+                while (speed_positive == true)
                 {
                     cout << "How many hours are you traveling? ";
                     cin >> hours;
@@ -161,8 +170,9 @@ int main()
                     {
                         plus_one_hours = false;
                     }
+                    distance_traveled(speed, hours);
+                    speed_positive = false;
                 }
-                distance_traveled(speed, hours);
                 break;
             }
 
@@ -245,32 +255,43 @@ void get_roman_num(int digit)
                 cout << "The Roman numeral version of " << digit << " is X" << endl;
                 break;
             }
-        
+
+            default: {
+                cout << "Invalid choice. Please choose a number between 1-10." << endl;
+                break;
+            }
     }
 }
 
 double calc_hyperrectangle(double width, double length, double height)
 {
-    double volume = width * length * height;
-    return volume;
+    if (length > 0 && width > 0 && height > 0) {
+        double volume = width * length * height;
+        cout << "The volume is " << volume << "." << endl;
+    }
+    else {
+        cout << "Input is invalid. Only enter positive values for length and width." << endl;
+    }
 }
 
-double area_circle() {
+double area_circle() 
+{
     double radius;
     double c_area;
     cout << "Enter the radius of your circle: " << endl;
     cin >> radius;
     if (radius >= 0) {
-        c_area = radius * (3.14159);
+        c_area = radius * radius * (3.14159);
         cout << "The area of your circle is " << c_area << "." << endl;
     }
     else {
         cout << "Input is invalid. The radius cannot be less than zero." << endl;
     }
-
+    return 0;
 }
 
-double area_rectangle() {
+double area_rectangle() 
+{
     double length;
     double width;
     double r_area;
@@ -280,14 +301,16 @@ double area_rectangle() {
     cin >> width;
     if (length > 0 && width > 0) {
         r_area = length * width;
-        cout << "The area of your reactangle is " << r_area << "." << endl;
+        cout << "The area of your rectangle is " << r_area << "." << endl;
     }
     else {
         cout << "Input is invalid. Only enter positive values for length and width." << endl;
     }
+    return 0;
 }
 
-double area_triangle() {
+double area_triangle() 
+{
     double base;
     double height;
     double t_area;
@@ -302,15 +325,18 @@ double area_triangle() {
     else {
         cout << "Input is invalid. Only enter positive values for base and height." << endl;
     }
+    return 0;
 }
 
-void distance_traveled(double speed, double hours)
+bool distance_traveled(double speed, double hours)
 {
+    bool speed_positive = true;
     cout << "Hour\tDistance Traveled" << endl;
     cout << "------------------------" << endl;
-    for (int i = 1; i < hours; i++)
+    for (int i = 1; i <= hours; i++)
     {
-        double distance = speed * hours;
-        cout << i << "\t" << distance << endl;
+        double distance = speed * i;
+        cout << i << "\t" << distance << " miles" << endl;
     }
+    return speed_positive = false;
 }
