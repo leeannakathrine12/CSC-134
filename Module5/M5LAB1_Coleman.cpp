@@ -3,8 +3,6 @@
 // Leeanna Kathrine Coleman
 // 10/28/24
 
-
-
 #include <iostream>
 using namespace std;
 
@@ -17,6 +15,8 @@ void choice_go_home();
 void choice_order_food();
 void freddy_fazbear();
 void taco_bell();
+void kitchen();
+void bathroom();
 
 int main() {
   cout << "M5LAB1 - Choose Your Own Adventure" << endl;
@@ -40,7 +40,7 @@ void main_menu() {
   if (1 == choice) {
     choice_front_door();
   } else if (2 == choice) {
-    // call choice 2 here
+    choice_back_door();
   } else if (3 == choice) {
     choice_go_home();
   } else if (4 == choice) {
@@ -71,8 +71,20 @@ void choice_front_door() {
 }
 
 void choice_back_door() {
-    cout << "TODO: Write something here" << endl;
-
+    cout << "You walk around the house to check the back door." << endl;
+    cout << "After jiggling the door knob a couple of times, it opens!" << endl;
+    cout << "You enter the house. All this walking around makes you feel" << endl;
+    cout << "pretty hungry and your nervousness makes you have to use the bathroom!" << endl;
+    cout << "Do you:" << endl;
+    cout << "1. Go to the Kitchen" << endl;
+    cout << "2. Go to the Bathroom" << endl;
+    int choice;
+    cin >> choice;
+  if (1 == choice) {
+    kitchen();
+  } else if (2 == choice) {
+    bathroom();
+  }
 }
 
 void choice_go_home() {
@@ -116,7 +128,7 @@ void freddy_fazbear(){
   cout << "If you are calling for further information or" << endl;
   cout << "seeking legal action, please do not call again!" << endl;
   cout << "Thank you, Goodbye!" << endl << endl;
-  cout << "You wonder what incident caused Freddy Fazbear\'s Pizzeria to close as you fall sleep hungry." << endl';
+  cout << "You wonder what incident caused Freddy Fazbear\'s Pizzeria to close as you fall sleep hungry." << endl;
 }
 
 void taco_bell() {
@@ -128,5 +140,26 @@ void taco_bell() {
   cout << "So, if you\'re still craving something, let me know!" << endl;
   cout << "What would you like to order?" << endl << endl;
   cout << "You hang up immediately and go to sleep hungry." << endl;
-  return 0;
+}
+
+void kitchen() {
+  cout << "You step into the kitchen, and the first thing you notice is the overwhelming" << endl;
+  cout << "number of candles scattered across every counter. The soft flickering light" << endl;
+  cout << "casts eerie shadows on the walls, creating an almost claustrophobic atmosphere." << endl; 
+  cout << "Suddenly, the back door slams shut with a deafening bang, and all the candles" << endl; 
+  cout << "snuff out in unison, plunging the room into complete darkness. In the silence," << endl;
+  cout << "you hear the faint sound of footsteps... but they're not yours. Panicking, you" << endl;
+  cout << "sprint toward the door, but the darkness is overwhelming. You stumble over" << endl;
+  cout << "something on the floor and crash to the ground. The last thing you see before" << endl; 
+  cout << "everything goes black is a pair of worn, scuffed shoes, and the knowledge that" << endl;
+  cout << "you\'re not alone anymore." << endl;
+}
+
+void bathroom() {
+  cout << "You walk over to the bathroom. The door creaks as you push it open, and the " << endl; 
+  cout << "flickering light casts strange shadows on the walls. As you step inside, the" << endl; 
+  cout << "mirror catches your eye. Your reflection isn\'t quite right. It\'s you, but " << endl; 
+  cout << "smiling unnaturally wide and creepily. Before you can react, the lights cut " << endl; 
+  cout << "out, and you hear a soft whisper from behind you: \"You should\'nt have come here.\"" << endl;
+  cout << "You were never seen again." << endl;
 }
